@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/ggw58jxnmcsfo2k6?svg=true)](https://ci.appveyor.com/project/agasferon/aqa-task-4-selenide)
