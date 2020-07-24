@@ -21,7 +21,7 @@ class RegistrationTest {
         $("[data-test-id='phone'] input").setValue("+79091234567");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
-        $(withText("Успешно")).waitUntil(visible, 20000);
+        $(withText("Успешно")).waitUntil(visible, 15000);
         $("[data-test-id=notification]").shouldHave(text("Встреча успешно забронирована на"));
     }
 
