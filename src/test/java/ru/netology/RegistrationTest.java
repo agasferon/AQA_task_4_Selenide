@@ -16,13 +16,15 @@ class RegistrationTest {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Краснодар");
         $("[data-test-id='date'] input").sendKeys(Keys.CONTROL + "a", Keys.DELETE);
-        $("[data-test-id='date'] input").setValue(randomiseDate.getDateIncrement());
+        String bookingDate = randomiseDate.getDateIncrement();
+        $("[data-test-id='date'] input").setValue(bookingDate);
         $("[data-test-id='name'] input").setValue("Иванов Иван");
         $("[data-test-id='phone'] input").setValue("+79091234567");
         $("[data-test-id='agreement']").click();
         $$("button").find(exactText("Забронировать")).click();
         $(withText("Успешно")).waitUntil(visible, 15000);
         $("[data-test-id=notification]").shouldHave(text("Встреча успешно забронирована на"));
+        $("[data-test-id=notification]").shouldHave(text(bookingDate));
     }
 
     @Test
